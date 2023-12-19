@@ -238,6 +238,8 @@ Algorithm (EdDSA). RFC 8032. [[paper]](https://doi.org/10.17487/RFC8032)
 - **基于 C++ 的 EdDSA 开源代码**：O. Peters. Portable C Implementation of Ed25519, a High-Speed HighSecurity Public-Key Signature System. Accessed: 2020. [[link]](https://github.com/orlp/ed25519)
 - 哔哩哔哩 · 数字签名与KZG承诺：[[link]](https://www.bilibili.com/video/BV17e411N7Jm/?spm_id_from=333.337.search-card.all.click&vd_source=f17606480b273d73e7f15a69fe00985e)
 - 抗差分故障攻击的两方协同EdDSA签名方案：[[paper]](http://www.jos.org.cn/html/2023/2/6505.htm)
+- EdDSA and Ed25519：[[link]](https://aandds.com/blog/eddsa.html)
+
 
 EdDSA 与 ECDSA 算法对比
 
