@@ -37,7 +37,7 @@ int main()
 
 for (int i = 0; i < num_iterations; ++i) {
     
-    printf("*******The %d-th time", i);
+    printf("**********The %d-th time***************", i);
 
     // Key Generation
     if (EVP_PKEY_keygen_init(pctx) <= 0)
