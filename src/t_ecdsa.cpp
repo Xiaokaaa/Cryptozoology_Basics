@@ -12,34 +12,34 @@ using namespace std;
 
 void handleErrors(void)
 {
-    ERR_print_errors_fp(stderr);
-    abort();
+	ERR_print_errors_fp(stderr);
+	abort();
 }
 
 void printHex(const unsigned char *data, size_t len)
 {
-    for (size_t i = 0; i < len; ++i)
-        printf("%02x", data[i]);
-    printf("\n");
+	for (size_t i = 0; i < len; ++i)
+		printf("%02x", data[i]);
+	printf("\n");
 }
 
 int main()
 {
-    int num_iterations = 100000; // total times
-    double total_sign_time = 0.0;
-    double total_verify_time = 0.0;
+	int num_iterations = 100000; // total times
+	double total_sign_time = 0.0;
+	double total_verify_time = 0.0;
 
-    EC_KEY *eckey = NULL;
-    const BIGNUM *priv_key_bn = NULL;
-    const EC_POINT *pub_key = NULL;
-    const EC_GROUP *group = NULL;
-    ECDSA_SIG *ecdsa_sig = NULL;
-    unsigned char digest[SHA256_DIGEST_LENGTH];
-    unsigned char *signature = NULL;
-    const char* plaintext = "Message to be signed";
-    int sig_len;
-    clock_t start, end;
-    double cpu_time_used;
+	EC_KEY *eckey = NULL;
+	const BIGNUM *priv_key_bn = NULL;
+	const EC_POINT *pub_key = NULL;
+	const EC_GROUP *group = NULL;
+	ECDSA_SIG *ecdsa_sig = NULL;
+	unsigned char digest[SHA256_DIGEST_LENGTH];
+	unsigned char *signature = NULL;
+	const char* plaintext = "Message to be signed";
+	int sig_len;
+	clock_t start, end;
+	double cpu_time_used;
 
 	for (int i = 0; i < num_iterations; ++i) {
 		

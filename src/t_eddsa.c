@@ -8,32 +8,32 @@
 
 void handleErrors(void)
 {
-    ERR_print_errors_fp(stderr);
-    abort();
+	ERR_print_errors_fp(stderr);
+	abort();
 }
 
 void printHex(const unsigned char *data, size_t len)
 {
-    for (size_t i = 0; i < len; ++i)
-        printf("%02x", data[i]);
-    printf("\n");
+	for (size_t i = 0; i < len; ++i)
+		printf("%02x", data[i]);
+	printf("\n");
 }
 
 int main()
 {
-    int num_iterations = 100000; // total times
-    double total_sign_time = 0.0;
-    double total_verify_time = 0.0;
+	int num_iterations = 100000; // total times
+	double total_sign_time = 0.0;
+	double total_verify_time = 0.0;
 
-    EVP_PKEY *pkey = NULL;
-    EVP_PKEY_CTX *pctx = EVP_PKEY_CTX_new_id(EVP_PKEY_ED25519, NULL);
-    unsigned char sig[64];
-    size_t siglen;
-    const char* msg = "Message to be signed";
-    size_t msglen = strlen(msg);
-    clock_t start, end;
-    double cpu_time_used;
-    
+	EVP_PKEY *pkey = NULL;
+	EVP_PKEY_CTX *pctx = EVP_PKEY_CTX_new_id(EVP_PKEY_ED25519, NULL);
+	unsigned char sig[64];
+	size_t siglen;
+	const char* msg = "Message to be signed";
+	size_t msglen = strlen(msg);
+	clock_t start, end;
+	double cpu_time_used;
+
 
 	for (int i = 0; i < num_iterations; ++i) {
 		
@@ -109,12 +109,12 @@ int main()
 		total_verify_time += cpu_time_used;
 	}
 
-    // Computer the average time
-    double avg_sign_time = total_sign_time / num_iterations;
-    double avg_verify_time = total_verify_time / num_iterations;
+	// Computer the average time
+	double avg_sign_time = total_sign_time / num_iterations;
+	double avg_verify_time = total_verify_time / num_iterations;
 
-    printf("\nAverage EdDSA Signature generation time : %f ms\n", avg_sign_time);
-    printf("Average EdDSA Signature verification time : %f ms\n", avg_verify_time);
+	printf("\nAverage EdDSA Signature generation time : %f ms\n", avg_sign_time);
+	printf("Average EdDSA Signature verification time : %f ms\n", avg_verify_time);
 
-    return 0;
+	return 0;
 }
