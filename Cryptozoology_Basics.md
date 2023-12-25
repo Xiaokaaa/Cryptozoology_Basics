@@ -1,3 +1,5 @@
+- [概念科普](#概念科普)
+  - [侧信道攻击（Side-channel attack）](#侧信道攻击side-channel-attack)
 - [算法](#算法)
   - [双线性映射e函数](#双线性映射e函数)
   - [RSA 算法](#rsa-算法)
@@ -10,6 +12,12 @@
 - [开发工具](#开发工具)
   - [OpenSSL](#openssl)
   - [MIRACL](#miracl)
+
+
+## 概念科普
+### 侧信道攻击（Side-channel attack）
+- Prof. Jean-Jacques Quisquater, Math Rizk, Side Channel Attack - State of the art, October 2002. [[paper]](https://www.cryptrec.go.jp/exreport/cryptrec-ex-1047-2002.pdf)
+
 
 
 ## 算法
